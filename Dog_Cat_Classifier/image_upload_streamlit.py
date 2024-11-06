@@ -35,6 +35,7 @@ if uploaded_file is not None:
     # Display the image and prediction result
     fig, ax = plt.subplots(figsize=(3, 3))
     ax.imshow(image)
+    
 
     if predictions[0][0] > 0.5:
         ax.set_title(f'Predicted: Dog, Chances: {predictions[0][0] * 100:.2f}%')
@@ -43,6 +44,6 @@ if uploaded_file is not None:
 
     ax.axis('off')
 
-    st.pyplot(img_array)
+    st.pyplot(fig)
 else:
     st.write("Please upload an image.")
