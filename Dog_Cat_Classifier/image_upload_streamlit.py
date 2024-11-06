@@ -34,14 +34,14 @@ if uploaded_file is not None:
     predictions = model.predict(img_array)
 
     # Display the image and prediction result
-    fig, ax = plt.subplots(figsize=(1,1))
+    fig, ax = plt.subplots(figsize=(3,3))
     ax.imshow(image)
     
 
     if predictions[0][0] > 0.5:
-        ax.set_title(f'Predicted: Dog, Chances: {predictions[0][0] * 100:.2f}%', fontsize=2)
+        ax.set_title(f'Predicted: Dog, Chances: {predictions[0][0] * 100:.2f}%', fontsize=6)
     else:
-        ax.set_title(f'Predicted: Cat, Chances: {(1 - predictions[0][0]) * 100:.2f}%', fontsize=2)
+        ax.set_title(f'Predicted: Cat, Chances: {(1 - predictions[0][0]) * 100:.2f}%', fontsize=6)
 
     ax.axis('off')
 
