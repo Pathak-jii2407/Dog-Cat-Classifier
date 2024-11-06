@@ -39,9 +39,9 @@ if uploaded_file is not None:
     
 
     if predictions[0][0] > 0.5:
-        ax.set_title(f'Predicted: Dog, Chances: {predictions[0][0] * 100:.2f}%', fontsize=5)
+        ax.set_title(f'Predicted: Dog, Chances: {predictions[0][0] * 100:.2f}%', fontsize=2)
     else:
-        ax.set_title(f'Predicted: Cat, Chances: {(1 - predictions[0][0]) * 100:.2f}%', fontsize=5)
+        ax.set_title(f'Predicted: Cat, Chances: {(1 - predictions[0][0]) * 100:.2f}%', fontsize=2)
 
     ax.axis('off')
 
