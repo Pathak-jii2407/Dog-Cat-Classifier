@@ -7,6 +7,7 @@ from tensorflow.keras.models import load_model
 import os
 
 st.title("Image Upload and Display")
+st.warning("Its accuracy is around 85%, so please do not upload human images!")
 
 uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 st.markdown("### *Dog / Cat Classifier*")
