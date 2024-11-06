@@ -39,7 +39,7 @@ if uploaded_file is not None:
     ax.imshow(image)
     
 
-    if predictions[0][0] > 0.5:
+    if predictions[0][0] > 0.6:
         ax.set_title(f'Predicted: Dog, Chances: {predictions[0][0] * 100:.2f}%', fontsize=6)
     else:
         ax.set_title(f'Predicted: Cat, Chances: {(1 - predictions[0][0]) * 100:.2f}%', fontsize=6)
