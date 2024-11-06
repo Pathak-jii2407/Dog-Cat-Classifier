@@ -34,7 +34,7 @@ if uploaded_file is not None:
     predictions = model.predict(img_array)
 
     # Display the image and prediction result
-    fig, ax = plt.subplots(figsize=(3,3))
+    fig, ax = plt.subplots(figsize=(1,1))
     ax.imshow(image)
     
 
