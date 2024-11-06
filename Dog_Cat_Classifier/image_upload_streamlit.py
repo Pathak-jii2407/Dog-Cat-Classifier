@@ -13,9 +13,12 @@ uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 if uploaded_file is not None:
     img_path = Image.open(uploaded_file)
 
-    # Load the model from the same directory
-    model_filename = "dogVScat.h5"
-    model_path = os.path.join(os.getcwd(), model_filename)
+    # # Load the model from the same directory
+    # model_filename = "dogVScat.h5"
+    # model_path = os.path.join(os.getcwd(), model_filename)
+
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(current_dir, "dogVScat.h5")
 
     # Load the model
     model = load_model(model_path)
