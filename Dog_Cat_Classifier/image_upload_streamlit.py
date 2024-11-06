@@ -6,7 +6,7 @@ from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.models import load_model
 import os
 
-st.title("Dog Cat Image Classifier")
+st.title("Dog / Cat Image Classifier")
 st.warning("Its accuracy is around 85%, so please do not upload human images!")
 
 uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
