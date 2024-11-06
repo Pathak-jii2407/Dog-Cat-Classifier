@@ -13,28 +13,32 @@ uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 if uploaded_file is not None:
     img_path = Image.open(uploaded_file)
 
-    # model_dir = r"M:\Deep Learning\CNN\Projects\Models"  
-    model_filename = "dogVScat.h5"  
-    model_path = os.path.join(model_filename) 
+    # Load the model from the same directory
+    model_filename = "dogVScat.h5"
+    model_path = os.path.join(os.getcwd(), model_filename)
 
+    # Load the model
     model = load_model(model_path)
 
+    # Resize and preprocess the image
     image = load_img(uploaded_file, target_size=(150, 150))  # resize the image
     img_array = img_to_array(image)  # converting to array
     img_array = np.expand_dims(img_array, axis=0)  # add batch dimension
     img_array /= 255.0  # rescale
 
+    # Make predictions
     predictions = model.predict(img_array)
 
-    fig, ax = plt.subplots(figsize=(3,3))
+    # Display the image and prediction result
+    fig, ax = plt.subplots(figsize=(3, 3))
     ax.imshow(image)
-    
+
     if predictions[0][0] > 0.5:
         ax.set_title(f'Predicted: Dog, Chances: {predictions[0][0] * 100:.2f}%')
     else:
         ax.set_title(f'Predicted: Cat, Chances: {(1 - predictions[0][0]) * 100:.2f}%')
-    
-    ax.axis('off')  
+
+    ax.axis('off')
 
     st.pyplot(fig)
 else:
