@@ -43,6 +43,6 @@ if uploaded_file is not None:
 
     ax.axis('off')
 
-    st.pyplot(fig)
+    st.pyplot(image)
 else:
     st.write("Please upload an image.")
