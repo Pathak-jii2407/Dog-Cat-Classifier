@@ -13,9 +13,9 @@ uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
 if uploaded_file is not None:
     img_path = Image.open(uploaded_file)
 
-    model_dir = r"M:\Deep Learning\CNN\Projects\Models"  
+    # model_dir = r"M:\Deep Learning\CNN\Projects\Models"  
     model_filename = "dogVScat.h5"  
-    model_path = os.path.join(model_dir, model_filename) 
+    model_path = os.path.join(model_filename) 
 
     model = load_model(model_path)
 
