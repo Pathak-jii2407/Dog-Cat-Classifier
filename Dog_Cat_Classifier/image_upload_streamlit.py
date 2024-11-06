@@ -9,7 +9,7 @@ import os
 st.title("Image Upload and Display")
 
 uploaded_file = st.file_uploader("Upload an image", type=["png", "jpg", "jpeg"])
-
+st.text("Dog / Cat Classifier")
 if uploaded_file is not None:
     img_path = Image.open(uploaded_file)
 
